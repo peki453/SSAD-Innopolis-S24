@@ -21,4 +21,6 @@ int main()
         if (!flag) cout << A[i] << " ";
     }
     cout << endl;
+
+    return 0;
 }
