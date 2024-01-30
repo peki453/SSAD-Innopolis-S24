@@ -1,45 +1,37 @@
-### Task: Create a Simple Zoo Animal Hierarchy
-
-#### Background
-
-You are creating a simple model for animals in a zoo. There are different types of animals, each with their unique behaviors and characteristics. Your goal is to use C++ features like multiple inheritance, polymorphism, access modifiers, and abstraction to model this scenario.
+### Task: Zoo Animal Hierarchy with Different Inheritance Structure
 
 #### Instructions
 
-1. **Define a Base Class `Animal`**
+1. **Base Class `Animal`**
 
-   - Include common attributes like `name` and `age` (protected access modifiers).
-   - Define a virtual function `makeSound()` that each animal will implement.
+   - Define a base class `Animal` with common attributes like `name` and `age` (protected access modifiers).
+   - Include a virtual function `makeSound()` for specific animal sounds.
 
-2. **Create Two Interface Classes: `LandAnimal` and `WaterAnimal`**
+2. **Intermediate Classes: `LandAnimal` and `WaterAnimal`**
 
-   - These interfaces should have at least one pure virtual function each. For example, `walk()` for `LandAnimal` and `swim()` for `WaterAnimal`.
+   - Modify `LandAnimal` and `WaterAnimal` to inherit from `Animal`.
+   - Add at least one unique method to each (e.g., `walk()` for `LandAnimal` and `swim()` for `WaterAnimal`).
+   - Implement the `makeSound()` method in a way that reflects their land/water nature.
 
 3. **Implement Derived Classes**
 
-   - Create at least two derived classes (e.g., `Lion` and `Dolphin`) that inherit from `Animal` and one of the interfaces.
-   - Implement the interface methods and `makeSound()` in each derived class.
+   - Create classes like `Lion` and `Dolphin` that inherit from `LandAnimal` and `WaterAnimal` respectively.
+   - Override the unique methods (e.g., `walk()`, `swim()`) and `makeSound()`.
 
-4. **Demonstrate Multiple Inheritance**
+4. **Create a Multiple Inheritance Class**
 
-   - Create a class `Amphibian` that inherits from both `LandAnimal` and `WaterAnimal`.
-   - Implement the necessary functions.
+   - Develop a class `Amphibian` that inherits from both `LandAnimal` and `WaterAnimal`.
+   - Resolve any potential ambiguities or issues arising from multiple inheritance.
 
-5. **Test Polymorphism**
+5. **Demonstrate Polymorphism**
 
-   - In your main function, create an array or a vector of `Animal` pointers.
-   - Instantiate objects of your derived classes and add them to your collection.
-   - Loop through the collection and call `makeSound()` for each animal.
+   - In the main function, create a collection of `Animal` pointers.
+   - Populate with instances of `Lion`, `Dolphin`, and `Amphibian`.
+   - Iterate through the collection, calling `makeSound()` and the unique methods.
 
-6. **Discuss Abstraction**
-   - Highlight how the base class and interfaces provide an abstract layer for the derived classes.
-
-#### Requirements
-
-- Make sure to use appropriate access specifiers for class members.
-- Demonstrate the use of virtual functions and polymorphism.
-- Show how multiple inheritance can be implemented.
+6. **Abstraction Discussion**
+   - Discuss how the base class and intermediate classes provide an abstraction layer.
 
 #### Expected Output
 
-Your program should create instances of different animals and demonstrate polymorphism by calling a common function like `makeSound()`. It should also show how an amphibian class can inherit features from both land and water animals.
+The program should instantiate various animal types, demonstrating polymorphism with `makeSound()` and the specific behaviors of land and water animals.
