@@ -20,7 +20,7 @@
 
 4. **Create a Multiple Inheritance Class**
 
-   - Develop a class `Amphibian` that inherits from both `LandAnimal` and `WaterAnimal`.
+   - Develop a class `Amphibian (Call it "Frog")` that inherits from both `LandAnimal` and `WaterAnimal`.
    - Resolve any potential ambiguities or issues arising from multiple inheritance.
 
 5. **Demonstrate Polymorphism**
