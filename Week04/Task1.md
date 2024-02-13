@@ -1,6 +1,6 @@
 ### Task 1: Implementing a Basic Bank Account Class
 
-#### Class Structure:
+#### You are given the following class structure:
 
 1.  **`Account` Class**: Base class representing a bank account.
     
@@ -11,15 +11,16 @@
     *   Additional data member: `interestRate` (double).
     *   Additional member functions: Constructor(s), `calculateInterest`, `getInterestRate`.
 
-#### Requirements:
+#### Instructions:
 
-1.  Implement `Account` and `SavingsAccount` classes. Additionally, implement constructors for both classes, utilizing delegation where appropriate.
-5.  Demonstrate the use of the `this` pointer where necessary.
-2.  Implement functions to deposit and withdraw money from the account, ensuring that the balance cannot be negative.
-6. The `Account` class should have a defaulted function for it's default constructor
-6. The `Account` class should have deleted functions for the copy constructor and assignment operator
-3.  Implement constant member function where necessary.
-4.  Implement a function to calculate interest for the `SavingsAccount` class.
+1.  Implement the class structure above, including:
+    + Constructor(s) for `Account` and `SavingsAccount` classes
+    + All member functions (e.g functions to deposit and withdraw money from the account, ensuring that the balance cannot be negative)
+    + The `calculateInterest` member function for the `SavingsAccount` class computes the interest accumulated based on the `interestRate` and performs a deposit to the account balance.
+    + Use constant member function where necessary
+2.  Demonstrate the use of the `this` pointer where necessary.
+3. Defaulted constructor: The `Account` class should have a defaulted function for it's default constructor
+4. Deleted functions: The `Account` class should have deleted functions for the copy constructor and assignment operator
 
 
 
