@@ -1,21 +1,30 @@
-### Task 2: Implementing a Vector Library with Cast Operations
+### Task 2: Implementing a Shape Hierarchy with Casting Techniques
 
-#### Class Structure:
+#### You are given the following class structure:
 
-1.  **`Vector` Class**: Represents a mathematical vector.
-    *   Data members: `x`, `y`, `z` (double).
-    *   Member functions: Constructors, `magnitude`, `normalize`.
+1.  **`Shape` Class**: Base class representing a generic shape.
+    *   Pure virtual member functions: `area` and `perimeter`.
 
-#### Requirements:
+2.  **`Rectangle` Class**: Derived class representing a rectangle.
+    *   Data members: `width` and `height` (double).
+    *   Member functions: Constructor, `area`, `perimeter`.
 
-1.  Create a file Vector.h for class member declarations. This should include constructors for the `Vector` class to initialize its components.
-2. Create a file Vector.cpp for class member definitions (implementations). 
-2.  Implement a function to calculate the magnitude of the vector.
-3.  Implement a function to normalize the vector.
-4.  Demonstrate the use of static cast to perform type conversions.
-5.  Utilize dynamic cast for runtime type checking (though not necessary in this particular example).
-6.  Use const cast to remove the const qualifier from a member function.
-7.  Utilize reinterpret cast to reinterpret the bit pattern of a variable.
+3.  **`Circle` Class**: Derived class representing a circle.
+    *   Data member: `radius` (double).
+    *   Member functions: Constructor, `area`, `perimeter`.
+
+#### Instructions:
+
+1.  Implement the class structure above, including:
+    + Constructors for `Rectangle` and `Circle` classes to initialize their dimensions.
+    + Virtual functions for `area` and `perimeter` in the `Shape` class and override them in the derived classes.
+2.  Given an instance of the `Rectangle` and `Circle` classes, demonstrate the use of static casting to perform type conversions.
+    + Suppose we wish to create a pointer to the `Rectangle` type called `rectPtr` and initialize it with `shape` a pointer to the `Shape` type, how will this be done? (Write your answer below [1])
+3.  At runtime, check if the type of `shape` a pointer to the `Shape` type changed dynamically into a pointer to the `Circle` type. Print `shape is a Circle` or `shape is not a Circle` depending on the check. (Write your answer below [2])
+5.  `area` and `perimeter` member functions return double constants. Use const cast to remove the const qualifier from `area` member function accessible via `rectPtr` a pointer to the `Rectangle` type described in 2 above. (Write your answer below [3])
+6.  Utilize reinterpret cast to reinterpret the bit pattern of `intValue` variable as a `double`. (Write your answer below [4])
+
+NB: You can use `M_PI` a constant from the cmath library
 
 
 #### How to run:
@@ -23,20 +32,22 @@
 ```cpp
 int main()
 {
-    Vector vec(3.0, 4.0, 5.0);
+    Rectangle rectangle(5.0, 3.0);
+    Circle circle(4.0);
 
-    cout << "Magnitude of vector: " << vec.magnitude() << endl;
+    Shape *shape = &rectangle;
 
-    vec.normalize();
+    // Demonstrate static casting [1]
+    
 
-    cout << "Normalized vector: (" << vec.staticCast(1) << ", "
-         << vec.staticCast(2) << ", " << vec.staticCast(3) << ")" << endl;
+    // Demonstrate dynamic casting [2]
+    
 
-    cout << "Magnitude after const cast: " << vec.getMagnitude() << endl;
+    // Demonstrate const casting [3]
 
-    double value = 3.14;
-    int intValue = vec.reinterpretCast(value);
-    cout << "Reinterpreted value: " << intValue << endl;
+
+    int intValue = 42;
+    // Demonstrate reinterpret casting [4]
 
     return 0;
 }
