@@ -1,37 +1,50 @@
 #include <iostream>
 
-class Enemy {
+class Enemy
+{
     // code for enemy class
+    // property name and health
+    // Constructor
+    // Methods takeDamage - decreases health, getName - returns name
 };
 
-
-class Character {
+class Character
+{
 public:
-    void attack(Enemy enemy) {
-        // code for attacking enemy
+    void mageAttack(Enemy enemy)
+    {
+        // code for mage attacking enemy
+    }
+    void rogueAttack(Enemy enemy)
+    {
+        // code for rogue attacking enemy
+    }
+    void warriorAttack(Enemy enemy)
+    {
+        // code for warrior attacking enemy
     }
 };
 
-
-class MageAttack {
+class MageAttack
+{
 public:
     int damageOnAttack = 10;
 };
 
-
-class RogueAttack {
+class RogueAttack
+{
 public:
     int damageOnAttack = 15;
 };
 
-
-class WarriorAttack {
+class WarriorAttack
+{
 public:
     int damageOnAttack = 25;
 };
 
-
-int main() {
+int main()
+{
     Character warrior;
     Character mage;
     Character rogue;
@@ -39,18 +52,17 @@ int main() {
     Enemy blackKiller;
     Enemy brownBiter;
 
-    warrior.attack(blackKiller);
-    mage.attack(brownBiter);
-    rogue.attack(blackKiller);
+    warrior.warriorAttack(blackKiller);
+    mage.mageAttack(brownBiter);
+    rogue.rogueAttack(blackKiller);
 
     return 0;
 }
 
-
-//EXAMPLE OUTPUT:
-//Warrior attack!
-//BLACK KILLER STRENGTH LEVEL IS: 75
-//Mage attack!
-//BROWN BITER STRENGTH LEVEL IS: 15
-//Rogue attack!
-//BLACK KILLER STRENGTH LEVEL IS: 60
+// EXAMPLE OUTPUT:
+// Warrior attack!
+// BLACK KILLER STRENGTH LEVEL IS: 75
+// Mage attack!
+// BROWN BITER STRENGTH LEVEL IS: 15
+// Rogue attack!
+// BLACK KILLER STRENGTH LEVEL IS: 60

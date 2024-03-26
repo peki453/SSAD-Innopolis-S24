@@ -3,61 +3,75 @@
 #include <iostream>
 using namespace std;
 
-class PayPal {
+class PayPal
+{
 public:
-    void makePayment(std::string item) {
+    void makePayment(std::string item)
+    {
         std::cout << "Making PayPal payment for item: " << item << std::endl;
     }
 
-    bool verifyPayment(std::string transactionId) {
+    bool verifyPayment(std::string transactionId)
+    {
         std::cout << "Verifying PayPal payment with transaction ID: " << transactionId << std::endl;
         return true;
     }
 
-    void refundPayment(std::string item) {
+    void refundPayment(std::string item)
+    {
         std::cout << "Refunding PayPal payment for item: " << item << std::endl;
     }
 };
 
-class Stripe {
+class Stripe
+{
 public:
-    void chargePayment(std::string item) {
+    void chargePayment(std::string item)
+    {
         std::cout << "Charging Stripe payment for item: " << item << std::endl;
     }
 
-    bool verifyCharge(std::string transactionId) {
+    bool verifyCharge(std::string transactionId)
+    {
         std::cout << "Verifying Stripe payment with transaction ID: " << transactionId << std::endl;
         return true;
     }
 
-    void issueRefund(std::string item) {
+    void issueRefund(std::string item)
+    {
         std::cout << "Issuing Refund for Stripe payment for item: " << item << std::endl;
     }
 };
 
-class PaymentProvider {
+class PaymentProvider
+{
     // implementation of PaymentProvider class
 };
 
-class PaymentGateWay {
+class PaymentGateWay
+{
 private:
-    std::unordered_map<std::string, PaymentProvider> paymentProviders;
+    std::unordered_map<std::string, PaymentProvider *> paymentProviders;
+
 public:
-    PaymentGateWay() {
-        paymentProviders = std::unordered_map<std::string, PaymentProvider>();
+    PaymentGateWay()
+    {
+        paymentProviders = std::unordered_map<std::string, PaymentProvider *>();
     }
-    void addPaymentProvider(std::string providerName, PaymentProvider paymentProvider) {
+    void addPaymentProvider(std::string providerName, PaymentProvider *paymentProvider)
+    {
         paymentProviders[providerName] = paymentProvider;
     }
-    void processPayment(std::string providerName, std::string paymentInfo) {
+    void processPayment(std::string providerName, std::string paymentInfo)
+    {
         // implementation of processPayment method
     }
-    void refundPayment(std::string providerName, std::string refundInfo) {
+    void refundPayment(std::string providerName, std::string refundInfo)
+    {
         // implementation of refundPayment method
     }
-    void verifyPayment(std::string providerName, std::string paymentInfo) {
+    void verifyPayment(std::string providerName, std::string paymentInfo)
+    {
         // implementation of verifyPayment method
     }
 };
-
-
